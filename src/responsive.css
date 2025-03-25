@@ -1,0 +1,27 @@
+@media screen and (max-width: 768px) {  
+  main {
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .note-list {
+    border-radius: 5px;
+    height: fit-content;
+  }
+  
+  note-list {
+    height: fit-content;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .title-search {
+    margin: 0;
+  }
+}
