@@ -102,9 +102,8 @@ button:hover {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  align-items: stretch;
+  align-items: stretch; 
 }
 
 .note-list {
@@ -133,7 +132,9 @@ note-list {
   display: flex;
   flex-direction: column;
   background-color: white;
-  height: 100%;
+  min-width: fit-content;
+  min-height: 100%;
+  max-height: fit-content;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -152,6 +153,7 @@ note-list {
 .error-message {
   color: red;
   font-size: 0.8rem;
+  display: none;
 }
 
 footer {
@@ -172,8 +174,13 @@ footer {
   margin-bottom: 1rem;
 }
 
+.title-search h2 {
+  min-width: fit-content;;
+}
+
 input[type='search'] {
   border: none;
+  width: 50%;
 }
 
 input[type='search']:focus-visible {

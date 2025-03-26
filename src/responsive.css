@@ -6,10 +6,6 @@
     gap: 0;
   }
 
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
   .note-list {
     border-radius: 5px;
     height: fit-content;
@@ -20,8 +16,33 @@
     margin: 0;
     padding: 1rem;
   }
-
+  
   .title-search {
+    flex-direction: column;
+    align-items: flex-start;
     margin: 0;
+  }
+  
+  .note-card {
+    font-size: small;
+  }
+
+  input[type='search'] {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title-search {
+    align-items: center;
+    flex-direction: row;     
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  input[type='search'] {
+    margin-top: 0;
+    width: 70%;              
   }
 }

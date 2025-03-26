@@ -13,6 +13,7 @@ const errorContent = document.getElementById("content-error");
 inputTitle.addEventListener("blur", validateTitle);
 inputTitle.addEventListener("input", validateTitle);
 function validateTitle() {
+  errorTitle.style.display = inputTitle.value ? 'none' : 'block';
   errorTitle.innerText = inputTitle.value ? '' : 'Kolom wajib diisi!';
 }
 
@@ -20,7 +21,8 @@ function validateTitle() {
 inputContent.addEventListener("blur", validateContent);
 inputContent.addEventListener("input", validateContent);
 function validateContent() {
-  errorContent.innerText = inputTitle.value ? '' : 'Kolom wajib diisi!';
+  errorContent.style.display = inputContent.value ? 'none' : 'block';
+  errorContent.innerText = inputContent.value ? '' : 'Kolom wajib diisi!';
 }
 
 // Adding a New Note
