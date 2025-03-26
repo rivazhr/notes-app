@@ -1,5 +1,9 @@
 /* Tablet Size */
 @media screen and (max-width: 768px) {  
+  html, body {
+    height: fit-content;
+  }
+
   main {
     min-height: fit-content;
     display: flex;
