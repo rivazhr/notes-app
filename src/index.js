@@ -26,7 +26,6 @@ function validateContent() {
 }
 
 // Adding a New Note
-const notes = [];
 document.getElementById("note-form").addEventListener("submit", function (e) {
   e.preventDefault();
 

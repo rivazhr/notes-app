@@ -1,3 +1,4 @@
+/* Tablet Size */
 @media screen and (max-width: 768px) {  
   main {
     min-height: fit-content;
@@ -18,31 +19,32 @@
   }
   
   .title-search {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: row;     
+    gap: 1rem;
     margin: 0;
   }
   
   .note-card {
     font-size: small;
   }
-
-  input[type='search'] {
-    margin-top: 1rem;
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .title-search {
-    align-items: center;
-    flex-direction: row;     
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
+  
   input[type='search'] {
     margin-top: 0;
     width: 70%;              
+  }
+}
+
+/* Phone Size */
+@media screen and (max-width: 600px) {
+  .title-search {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  
+  input[type='search'] {
+    margin-top: 1rem;
+    width: 100%;
   }
 }
