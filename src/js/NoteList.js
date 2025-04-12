@@ -1,5 +1,6 @@
 import "./NoteItem.js";
 import Swal from "sweetalert2";
+import { animate } from 'animejs';
 
 export class NoteList extends HTMLElement {
   constructor() {

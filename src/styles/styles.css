@@ -24,7 +24,8 @@ body {
 
 main {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
+  height: 70%;
   flex-grow: 1;
 }
 
@@ -162,9 +163,29 @@ button:hover {
 }
 
 note-list {
+  padding-right: 0.3rem;
   margin: 0;
   height: 100%;
   overflow: auto;
+}
+
+note-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+note-list::-webkit-scrollbar-track {
+  background: rgba(245, 245, 245, 0.6);
+  border-radius: 10px;
+}
+
+note-list::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+note-list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-color);
 }
 
 .meta {
