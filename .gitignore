@@ -1,1 +1,9 @@
+# Dependency files
 node_modules/
+
+# Build output
+public/
+dist/
+
+# Environment files
+*.env
