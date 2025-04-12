@@ -1,0 +1,76 @@
+/* Tablet and Phone Size */
+@media screen and (max-width: 768px) {
+  body {
+    min-height: 100vh;
+    height: fit-content;
+    justify-content: center;
+  }
+
+  main {
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  app-bar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .notes-form {
+    width: 100%;
+  }
+
+  .note-list {
+    border-radius: 5px;
+    height: fit-content;
+  }
+
+  note-list {
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  note-item {
+    font-size: small;
+  }
+
+  .title-search {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  input[type="search"] {
+    margin-top: 1rem;
+    max-width: none;
+    width: 100%;
+  }
+
+  footer {
+    justify-content: center;
+  }
+}
+
+/* Others */
+@media screen and (max-height: 500px) {
+  body {
+    height: fit-content;
+  }
+
+  app-bar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}

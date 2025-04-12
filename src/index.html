@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+  </head>
+
+  <body>
+    <app-bar></app-bar>
+
+    <main class="container">
+      <section class="notes-form">
+        <h2>Make a New Note</h2>
+        <form id="note-form">
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Enter note title"
+            required
+          />
+          <span id="title-error" class="error-message"></span>
+
+          <label for="content">Content:</label>
+          <textarea
+            id="content"
+            name="content"
+            placeholder="Enter note content"
+            required
+          ></textarea>
+          <span id="content-error" class="error-message"></span>
+
+          <button type="submit" class="btn-primary">Add Note</button>
+        </form>
+      </section>
+
+      <section class="note-list">
+        <section class="title-search">
+          <section class="title-button">
+            <h2>Note List</h2>
+            <button id="show-hide-archived" class="btn-show">
+              Show Archived
+            </button>
+          </section>
+          <input
+            type="search"
+            name="search-title"
+            id="search-title"
+            placeholder="Search Notes"
+          />
+        </section>
+        <note-list class="grid note-list-container"></note-list>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 <strong>Notes App</strong>. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
