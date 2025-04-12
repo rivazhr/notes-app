@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 class NoteItem extends HTMLElement {
   set note(data) {
     this._note = data;
@@ -36,7 +37,11 @@ class NoteItem extends HTMLElement {
       });
       this.closest("note-list")?.renderNotes();
     } catch (error) {
-      console.error("Terjadi kesalahan saat mengarsip data");
+      Swal.fire({
+        icon: "error",
+        title: "Failed to Archive Note!",
+        text: error.message,
+      });
     }
   }
 
@@ -47,10 +52,14 @@ class NoteItem extends HTMLElement {
       });
       this.closest("note-list")?.renderArchivedNotes();
     } catch (error) {
-      console.error("Terjadi kesalahan saat mengembalikan data");
+      Swal.fire({
+        icon: "error",
+        title: "Failed to Unarchive Note!",
+        text: error.message,
+      });
     }
   }
-
+  
   async deleteNote(id) {
     try {
       await fetch(`https://notes-api.dicoding.dev/v2/notes/${id}`, {
@@ -58,10 +67,15 @@ class NoteItem extends HTMLElement {
       });
       this.closest("note-list")?.renderNotes();
     } catch (error) {
-      console.error("Terjadi kesalahan saat menghapus data");
+      Swal.fire({
+        icon: "error",
+        title: "Failed to Delete Note!",
+        text: error.message,
+      });
     }
   }
 }
+customElements.define("note-item", NoteItem);
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -81,4 +95,3 @@ function formatDate(dateString) {
   // Contoh Output: "12 Oktober 2022 pukul 12.15"
   return formattedDate.replace(".", ":").replace("pukul ", "") + " WIB";
 }
-customElements.define("note-item", NoteItem);

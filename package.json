@@ -13,7 +13,7 @@
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
-    "animejs": "^4.0.1",
+    "sortablejs": "^1.15.6",
     "sweetalert2": "^11.17.2"
   }
 }

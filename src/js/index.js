@@ -4,6 +4,12 @@ import "./AppBar.js";
 import "./NoteList.js";
 import "./LoadingIndicator.js";
 
+// Add Event Listener
+document.getElementById("add-btn").addEventListener("click", (event) => {
+  const addContainer = document.querySelector(".notes-form");
+  addContainer.classList.toggle("hidden");
+});
+
 // Form Validation
 const inputTitle = document.querySelector("input[name='title']");
 const inputContent = document.querySelector("textarea[name='content']");
