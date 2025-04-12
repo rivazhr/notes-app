@@ -41,6 +41,8 @@ class NoteItem extends HTMLElement {
         icon: "error",
         title: "Failed to Archive Note!",
         text: error.message,
+        confirmButtonColor: "#69247c",
+        confirmButtonText: "Okay",
       });
     }
   }
@@ -56,10 +58,12 @@ class NoteItem extends HTMLElement {
         icon: "error",
         title: "Failed to Unarchive Note!",
         text: error.message,
+        confirmButtonColor: "#69247c",
+        confirmButtonText: "Okay",
       });
     }
   }
-  
+
   async deleteNote(id) {
     try {
       await fetch(`https://notes-api.dicoding.dev/v2/notes/${id}`, {
