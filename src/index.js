@@ -1,11 +1,11 @@
-import "../styles/styles.css";
-import "../styles/responsive.css";
-import "./AppBar.js";
-import "./NoteList.js";
-import "./LoadingIndicator.js";
+import "./styles/styles.css";
+import "./styles/responsive.css";
+import "./js/AppBar.js";
+import "./js/NoteList.js";
+import "./js/LoadingIndicator.js";
 
 // Add Event Listener
-document.getElementById("add-btn").addEventListener("click", (event) => {
+document.getElementById("new-button").addEventListener("click", (event) => {
   const addContainer = document.querySelector(".notes-form");
   addContainer.classList.toggle("hidden");
 });

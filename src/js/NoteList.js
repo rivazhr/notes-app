@@ -13,6 +13,11 @@ export class NoteList extends HTMLElement {
 
   // Function to add a new note to the note list
   async addNote(newNote) {
+    const addButton = document.querySelector("#add-button");
+    addButton.disabled = true;
+    const originalText = addButton.textContent;
+    addButton.textContent = "Adding a new note...";
+
     try {
       await fetch("https://notes-api.dicoding.dev/v2/notes", {
         method: "POST",
@@ -25,6 +30,8 @@ export class NoteList extends HTMLElement {
         }),
       });
       this.renderNotes();
+      addButton.disabled = false;
+      addButton.textContent = originalText;
     } catch (error) {
       Swal.fire({
         icon: "error",

@@ -24,18 +24,26 @@ class NoteItem extends HTMLElement {
     this.querySelector("#archive-button").addEventListener("click", () => {
       this._note.archived ? this.unArchiveNote(id) : this.archiveNote(id);
     });
-
+    
     this.querySelector("#delete-button").addEventListener("click", () => {
       this.deleteNote(id);
     });
   }
-
+  
   async archiveNote(id) {
+    const archiveBtn = this.querySelector("#archive-button");
+    archiveBtn.disabled = true;
+    const originalText = archiveBtn.textContent;
+    archiveBtn.textContent = "Archiving...";
+    
     try {
       await fetch(`https://notes-api.dicoding.dev/v2/notes/${id}/archive`, {
         method: "POST",
       });
       this.closest("note-list")?.renderNotes();
+      
+      archiveBtn.disabled = false;
+      archiveBtn.textContent = originalText;
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -46,13 +54,20 @@ class NoteItem extends HTMLElement {
       });
     }
   }
-
+  
   async unArchiveNote(id) {
+    const unArchiveBtn = this.querySelector("#archive-button");
+    unArchiveBtn.disabled = true;
+    const originalText = unArchiveBtn.textContent;
+    unArchiveBtn.textContent = "Unarchiving...";
+    
     try {
       await fetch(`https://notes-api.dicoding.dev/v2/notes/${id}/unarchive`, {
         method: "POST",
       });
       this.closest("note-list")?.renderArchivedNotes();
+      unArchiveBtn.disabled = false;
+      unArchiveBtn.textContent = originalText;
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -65,11 +80,18 @@ class NoteItem extends HTMLElement {
   }
 
   async deleteNote(id) {
+    const deleteBtn = this.querySelector("#delete-button");
+    deleteBtn.disabled = true;
+    const originalText = deleteBtn.textContent;
+    deleteBtn.textContent = "Deleting...";
+
     try {
       await fetch(`https://notes-api.dicoding.dev/v2/notes/${id}`, {
         method: "DELETE",
       });
       this.closest("note-list")?.renderNotes();
+      deleteBtn.disabled = false;
+      deleteBtn.textContent = originalText;
     } catch (error) {
       Swal.fire({
         icon: "error",
